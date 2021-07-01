@@ -5,9 +5,8 @@ package model;
  *<h1>Film<h1/>
  * <p>Film is a superclass.<p/>
  * <p>It's an abstract class, it's not possible to create object
- * using this class</p>
- * This class contains an abstract method
- * {@code view()} which must be implemented by the subclasses
+ * using this class. This class contains an abstract method
+ * {@code view()} which must be implemented by the subclasses. </p>
  * @author anncode
  * @author Guillermo
  * @version 1.1

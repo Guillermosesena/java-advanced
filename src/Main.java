@@ -84,7 +84,10 @@ public class Main {
 			
 		}while(exit != 0);
 	}
-	
+
+	/**
+	 * Shows the list of movies, indicates whether the movie has already been view or not
+	 * */
 	static ArrayList<Movie> movies = Movie.makeMoviesList();
 	public static void showMovies() {
 		int exit = 1;

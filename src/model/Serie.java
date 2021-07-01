@@ -2,6 +2,10 @@ package model;
 
 import java.util.ArrayList;
 
+/**
+ * Inherits from {@link Film}
+ *
+ * */
 public class Serie extends Film{
 	
 	private int id;

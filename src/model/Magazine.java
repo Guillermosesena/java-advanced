@@ -3,6 +3,10 @@ package model;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * Inherits from {@link Publication}
+ *
+ * */
 public class Magazine extends Publication {
 	
 	private int id;
