@@ -93,7 +93,22 @@ public class Book extends Publication implements IVisualizable {
 			setTimeReaded(0);
 		}
 	}
-	
+
+	public void view(){
+		setReaded(true);
+		Date dateI = startToSee(new Date());
+
+		for (int i = 0; i < 100000; i++) {
+			System.out.println("..........");
+		}
+
+		//Termine de verla
+		stopToSee(dateI, new Date());
+		System.out.println();
+		System.out.println("Leíste: " + toString());
+		System.out.println("Por: " + getTimeReaded() + " milisegundos");
+	}
+
 	public static ArrayList<Book> makeBookList() {
 		ArrayList<Book> books = new ArrayList();
 		String[] authors = new String[3];
