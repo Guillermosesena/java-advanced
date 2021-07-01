@@ -1,5 +1,18 @@
 package model;
 
+
+/**
+ *<h1>Film<h1/>
+ * <p>Film is a superclass.<p/>
+ * <p>It's an abstract class, it's not possible to create object
+ * using this class</p>
+ * This class contains an abstract method
+ * {@code view()} which must be implemented by the subclasses
+ * @author anncode
+ * @author Guillermo
+ * @version 1.1
+ * @since 2018
+ * */
 public abstract class Film {
 	
 	private String title;
@@ -67,7 +80,9 @@ public abstract class Film {
 		this.viewed = viewed;
 	}
 
-
+	/**
+	 * {@code view()} it's an abstract method tha must be implemented by subclasses
+	 * */
 	public abstract void view();
 
 }

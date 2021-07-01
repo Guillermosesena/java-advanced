@@ -8,7 +8,18 @@ import java.util.Date;
 import java.util.Scanner;
 
 
-
+/**
+ * <h1>Amazon viewer</<h1>
+ * <p></>It's an application that shows Movies, Series,
+ * Books and Magazines. You can generate general reports with date.</p>
+ * There are some rules, like all the elements can be viewed, except for the
+ * Magazines, these only are just an exhibit and they can be viewed.
+ *
+ * @author anncode
+ * @author guillermo
+ * @version 1.1
+ * @since 2018
+ * */
 public class Main {
 
 	public static void main(String[] args) {
