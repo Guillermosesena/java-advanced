@@ -2,6 +2,10 @@ package model;
 
 import java.util.ArrayList;
 
+/**
+ * Inherits from {@link Movie}
+ * @see Film
+ * */
 public class Chapter extends Movie {
 	
 	
