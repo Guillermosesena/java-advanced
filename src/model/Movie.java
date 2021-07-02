@@ -1,5 +1,7 @@
 package model;
 
+import amazonviewer.dao.MovieDAO;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -8,11 +10,14 @@ import java.util.Date;
  * Inherits from {@link Film}
  * I'ts implemented of {@link IVisualizable}
  * */
-public class Movie extends Film implements IVisualizable {
+public class Movie extends Film implements IVisualizable, MovieDAO {
 	
 	private int id;
 	private int timeViewed;
-	
+
+	public Movie(){
+
+	}
 	
 	public Movie(String title, String genre, String creator, int duration, short year) {
 		super(title, genre, creator, duration);
@@ -23,7 +28,9 @@ public class Movie extends Film implements IVisualizable {
 	public int getId() {
 		return id;
 	}
-	
+	public void setID(int id) {
+		this.id = id;
+	}
 	
 	public int getTimeViewed() {
 		return timeViewed;
@@ -69,13 +76,8 @@ public class Movie extends Film implements IVisualizable {
 	}
 	
 	public static ArrayList<Movie> makeMoviesList() {
-		ArrayList<Movie> movies = new ArrayList();
-		
-		for (int i = 1; i <= 5; i++) {
-			movies.add(new Movie("Movie " + i, "Genero " + i, "Creador " + i, 120+i, (short)(2017+i)));
-		}
-		
-		return movies;
+		Movie movie = new Movie();
+		return movie.read();
 	}
 
 
