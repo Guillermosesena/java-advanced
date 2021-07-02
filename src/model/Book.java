@@ -1,5 +1,7 @@
 package model;
 
+import util.AmazonUtil;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -8,12 +10,23 @@ public class Book extends Publication implements IVisualizable {
 	private String isbn;
 	private boolean readed;
 	private int timeReaded;
+
+	public ArrayList<Page> getPages() {
+		return pages;
+	}
+
+	public void setPages(ArrayList<Page> pages) {
+		this.pages = pages;
+	}
+
+	private ArrayList<Page> pages;
 	
 	
-	public Book(String title, Date edititionDate, String editorial, String[] authors) {
+	public Book(String title, Date edititionDate, String editorial, String[] authors, ArrayList<Page> pages) {
 		super(title, edititionDate, editorial);
 		// TODO Auto-generated constructor stub
 		setAuthors(authors);
+		this.pages = pages;
 	}
 
 
@@ -98,9 +111,29 @@ public class Book extends Publication implements IVisualizable {
 		setReaded(true);
 		Date dateI = startToSee(new Date());
 
-		for (int i = 0; i < 100000; i++) {
-			System.out.println("..........");
-		}
+		int i = 0;
+		do {
+			System.out.println("............");
+			System.out.println("Page" + getPages().get(i).getNumber());
+			System.out.println(getPages().get(i).getContent());
+			System.out.println("............");
+			if( i != 0) {
+				System.out.println("1. Return to the previous page");
+			}
+			System.out.println("2. Next page");
+			System.out.println("0. Close Book");
+			System.out.println();
+			int response = AmazonUtil.validateUserResponseMenu(0, 2);
+			if (response == 2){
+				i++;
+			}else if(response==1){
+				i--;
+			}else if(response == 0){
+				break;
+			}
+
+		}while(i < getPages().size());
+
 
 		//Termine de verla
 		stopToSee(dateI, new Date());
@@ -115,14 +148,22 @@ public class Book extends Publication implements IVisualizable {
 		for (int i = 0; i < 3; i++) {
 			authors[i] = "author "+i;
 		}
+
+		ArrayList<Page> pages = new ArrayList<>();
+		int pagina;
+		for (int i = 0; i < 3; i++) {
+			pagina = i+1;
+			pages.add(new Book.Page(pagina,"Page contain"+pagina));
+		}
+
 		for (int i = 1; i <= 5; i++) {
-			books.add(new Book("Book " + i, new Date(), "editorial " + i, authors));
+			books.add(new Book("Book " + i, new Date(), "editorial " + i, authors, pages));
 		}
 		
 		return books;
 	}
 
-	
+
 	 public static class Page{
 		private int id;
 		private int number;
