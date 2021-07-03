@@ -16,7 +16,8 @@ public class Lambda {
         oneListener.onOne("Sin lambda :(");
         oneListener2.onOne("Con lambda :)");
 
-
+        //Exercise 36/40
+        Clickable clickable = ()->{};
 
     }
 }
