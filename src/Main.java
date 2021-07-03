@@ -255,15 +255,18 @@ public class Main {
 		report.setNameFile("reporte");
 		report.setExtension("txt");
 		report.setTitle(":: VISTOS ::");
-		String contentReport = "";
-		
-		for (Movie movie : movies) {
+		StringBuilder contentReport = new StringBuilder();
+
+		movies.stream().filter(m -> m.getIsViewed()).
+				forEach(m -> contentReport.append(m.toString() + "\n"));
+
+		/*for (Movie movie : movies) {
 			if (movie.getIsViewed()) {
 				contentReport += movie.toString() + "\n";
 				
 			}
-		}
-		
+		}*/
+		/*
 		for (Serie serie : series) {
 			ArrayList<Chapter> chapters = serie.getChapters();
 			for (Chapter chapter : chapters) {
@@ -280,9 +283,9 @@ public class Main {
 				contentReport += book.toString() + "\n";
 				
 			}
-		}
+		}*/
 
-		report.setContent(contentReport);
+		report.setContent(contentReport.toString());
 		report.makeReport();
 		System.out.println("Reporte Generado");
 		System.out.println();
