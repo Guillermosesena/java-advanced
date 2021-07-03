@@ -88,8 +88,9 @@ public class Main {
 	/**
 	 * Shows the list of movies, indicates whether the movie has already been view or not
 	 * */
-	static ArrayList<Movie> movies = Movie.makeMoviesList();
+	static ArrayList<Movie> movies = new ArrayList<>();
 	public static void showMovies() {
+		movies = Movie.makeMoviesList();
 		int exit = 1;
 		
 		do {
