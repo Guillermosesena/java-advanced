@@ -19,5 +19,8 @@ public class Lambda {
         //Exercise 36/40
         Clickable clickable = ()->{};
 
+
+        OnOneListener oneListener3 = message-> System.out.println("Tu mensaje: " + message);
+
     }
 }
